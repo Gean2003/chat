@@ -23,16 +23,40 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5
 Content-Type: application/json 
 
 {
-    "title": "Prueba",
-    "imageUrl": "www.prueba.com"
+    "title": "Grupo 3",
+    "imageUrl": "www.prueba3.com"
 }
 
 GET localhost:9000/api/v1/conversations
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
 Content-Type: application/json 
 
-GET localhost:9000/api/v1/conversations/2aa21aee-4946-447f-971e-0bd99998e33b
+GET localhost:9000/api/v1/conversations/01bafff3-274e-437c-9a9b-0edfcb5979d9
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
 Content-Type: application/json 
 
-DELETE localhost:9000/api/v1/conversations
+DELETE localhost:9000/api/v1/conversations/880d4eee-6b00-47ef-b7f2-ff9113e35aa2
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
+
+PATCH localhost:9000/api/v1/conversations/01bafff3-274e-437c-9a9b-0edfcb5979d9
+Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
+
+{
+    "title": "grupo 3 edited",
+    "imageUrl": "ww.edited"
+}
+
+GET localhost:9000/api/v1/conversations/cf4ef950-81fc-4937-81fa-3a71b5902cba/messages
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
+Content-Type: application/json
+
+POST localhost:9000/api/v1/conversations/cf4ef950-81fc-4937-81fa-3a71b5902cba/messages
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
+Content-Type: application/json
+
+{
+    "message": "que tal"
+    
+}

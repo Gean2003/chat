@@ -41,7 +41,7 @@ const createConversations = (req, res) => {
 // 3.b 
 
 const getConversationById = (req, res) => {
-    const id = req.params.id
+    const id = req.params.conversations_id
     
     conversationsController.getConversationsById(id)
         .then( data => {
@@ -53,7 +53,7 @@ const getConversationById = (req, res) => {
 } ;
 
 const deleteConversation = (req, res) => {
-    const id = req.params.id
+    const id = req.params.conversations_id
 
     conversationsController.deleteConversationsById(id)
         .then( data => {
@@ -63,14 +63,14 @@ const deleteConversation = (req, res) => {
                 res.status(404).json({err: 'invalid Id'})
             }
         } )
-        .cath( err => {
+        .catch( err => {
             res.status(400).json({message: err.message})
         } )
     
 } ;
 
 const patchConversations = (req, res) => {
-    const id = req.conversation.id ;
+    const id = req.params.conversations_id ;
     const { title, imageUrl  } = req.body  ;
 
     conversationsController.patchConversationsById(id, {title, imageUrl})
@@ -83,10 +83,25 @@ const patchConversations = (req, res) => {
     
 } ;
 
+const getMessagesById = (req, res) => {
+    const conversationId = req.params.conversations_id ;
+        conversationsController.getMessagesById(conversationId)
+        .then( data => {
+            res.status(200).json(data)
+        } )
+        .catch( err => {
+            res.status(400).json({
+                message: err.message
+            })
+        } )
+    
+}  ;
+
 module.exports = {
     getAllConversations,
     createConversations,
     getConversationById,
     deleteConversation,
-    patchConversations
+    patchConversations,
+    getMessagesById
 }
