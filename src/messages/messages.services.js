@@ -1,5 +1,17 @@
 const messagesController = require('./messages.controllers') ;
 
+const getMessageById = (req, res) => {
+    const id = req.params.message_id ;
+    messagesController.getMessageById(id)
+        .then( response => {
+            res.status(200).json(response)
+        } )
+        .catch(err => {
+            res.status(400).json({message: err.message})
+        })
+    
+} ;
+
 const createMessages = (req, res) => {
     const userId = req.user.id ;
     const conversationId = req.params.conversations_id ;
@@ -23,6 +35,22 @@ const createMessages = (req, res) => {
     }
 } ;
 
+const patchMessages = (req, res) => {
+    const id = req.params.message_id ;
+    const { message } = req.body  ;
+
+    messagesController.patchMessagesById(id, {message})
+        .then( () => {
+            res.status(200).json({message: 'message was update'})
+        } )
+        .catch(err => {
+            res.status(400).json({message: err.message})
+        })
+    
+} ;
+
 module.exports = {
-    createMessages
+    createMessages,
+    getMessageById,
+    patchMessages
 }

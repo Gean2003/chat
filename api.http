@@ -14,9 +14,10 @@ POST localhost:9000/api/v1/auth/login
 Content-Type: application/json
 
 {
-"email":"geanv1@example.com",
-"password":"root"
+        "email":"postman@mail.com" ,
+        "password": "postman1" 
 }
+
 
 POST localhost:9000/api/v1/conversations
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
@@ -34,6 +35,7 @@ Content-Type: application/json
 GET localhost:9000/api/v1/conversations/01bafff3-274e-437c-9a9b-0edfcb5979d9
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
 Content-Type: application/json 
+
 
 DELETE localhost:9000/api/v1/conversations/880d4eee-6b00-47ef-b7f2-ff9113e35aa2
 Content-Type: application/json
@@ -57,6 +59,19 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5
 Content-Type: application/json
 
 {
-    "message": "que tal"
+    "message": "que tal holaa"
+    
+}
+
+GET localhost:9000/api/v1/conversations/cf4ef950-81fc-4937-81fa-3a71b5902cba/messages/c2103c7a-0ce8-4dc4-90fa-4ae724b60586
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
+Content-Type: application/json
+
+PATCH localhost:9000/api/v1/conversations/cf4ef950-81fc-4937-81fa-3a71b5902cba/messages/c2103c7a-0ce8-4dc4-90fa-4ae724b60586
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0OGNjYzBhLTI5OGYtNDJjMC04MzRkLThlMzdkZjFlODgzZCIsImVtYWlsIjoiZ2VhbnYxQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY2NjgyMzQzOX0.WYEoqLRjZWAdBFc4EZHKmq9rEJth7LHtaus8gDGmAwk
+Content-Type: application/json
+
+{
+    "message": "que tal holaa edited"
     
 }

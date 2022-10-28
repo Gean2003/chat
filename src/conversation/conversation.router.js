@@ -1,7 +1,7 @@
 const router = require('express').Router() ;
 const passport = require('passport') ;
-const { createMessages } = require('../messages/messages.services');
 
+const messagesServices = require('../messages/messages.services');
 const conversationServices = require('./conversation.services') ;
 require('../middlewares/auth.middleware')(passport)
 
@@ -27,7 +27,14 @@ router.route('/:conversations_id/messages')
             conversationServices.getMessagesById)
 
             .post(passport.authenticate('jwt', {session: false}),
-            createMessages)
+            messagesServices.createMessages)
+
+router.route('/:conversations_id/messages/:message_id')
+            .get(passport.authenticate('jwt', {session: false}),
+            messagesServices.getMessageById)
+
+            .patch(passport.authenticate('jwt', {session: false}),
+            messagesServices.patchMessages)
 
 module.exports = router
 

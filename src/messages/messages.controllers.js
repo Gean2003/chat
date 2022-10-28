@@ -1,8 +1,17 @@
 const Messages = require('../models/message.models') ;
 const uuid = require('uuid');
 
-//NOTE: crear mensajes
+//NOTE: buscar messages por id
+const getMessageById = async (id) => {
+    const messages = await Messages.findOne({
+        where: {
+            id
+        }
+    }) ;
+    return messages
+};
 
+//NOTE: crear mensajes
 const createMessages = async (data) => {
     const messages = await Messages.create({
         id: uuid.v4(),
@@ -13,6 +22,18 @@ const createMessages = async (data) => {
     return messages
 } ;
 
+//NOTE: editar mensajes
+const patchMessagesById = async (id, data) => {
+    const messages = await Messages.update(data, {
+        where: {
+            id
+        }
+    }) ;
+    return messages
+}
+
 module.exports = {
-    createMessages
+    createMessages,
+    getMessageById,
+    patchMessagesById
 }
